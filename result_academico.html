@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Resultado Acadêmico</title>
+        <style>/* Início da estilização geral css: */
+            * {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size:18px;
+                font-weight:bold;
+            }
+            /* Fim da estilização geral css. */
+        </style>
+        <script>
+        /*Segue algoritmo JavaScript q recebe as notas obtidas pelo aluno e, em seguida,
+calcula e exibe a média aritmética e o resultado: Aprovado (média >= 7),
+Reprovado (média <= 5) e Reavaliação/Prova Final (média > 5 e < 7): */
+
+            //Declaração das Variáveis ...
+            const n_notas = prompt('Informe o número de notas para cálculo da Média Final:')
+            let nota = 0
+            let soma = 0
+            let MA = ''
+            let resultado = ''
+
+            //Loop q limita o nº de notas digitadas pelo usuário ao informado e salvo em n_notas:
+            for(let n=1;n<=n_notas;n++){
+                nota = Number(prompt('Digite a nota '+n+'. Use ponto em vez de vírgula!'))
+                soma = soma + nota
+            }
+            //Declaração de variável constante q calcula e armazena a média aritmética:
+            const media = soma/n_notas
+            
+            //Estrutura condicional q estiliza e exibe Média e Resultado conforme a média obtida:
+            if (media >= 7) {
+                MA = "<p style='color:#30c;'>Média: "+media.toFixed(2)+"</p>"
+                resultado = "<p style='color:#30c;'>Resultado: Aprovado!</p>"
+            } else if (media <= 5) {
+                MA = "<p style='color:#f00;'>Média: "+media.toFixed(2)+"</p>"                
+                resultado = "<p style='color:#f00;'>Resultado: Reprovado!</p>"
+            } else {
+                MA = "<p style='color:#ff8c00;'>Média: "+media.toFixed(2)+"</p>"                
+                resultado = "<p style='color:#ff8c00;'>Fazer Reavaliação/Prova Final!</p>"
+            }
+
+            //Método document.write usado p/ exibir a Média e o Resultado no navegador:
+            document.write(MA)
+            document.write(resultado)
+
+        //Fim do algoritmo JavaScript.
+        </script>
+    </head>        
+     <body>
+     </body>
+</html>
